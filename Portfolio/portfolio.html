@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vedant Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- INTERNAL CSS -->
+    <style>
+        /* Tag selector */
+        p {
+            color: #555;
+        }
+
+        /* ID selector */
+        #hero {
+            background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c");
+            background-size: cover;
+            background-position: center;
+            height: 380px;
+        }
+
+        /* Internal class */
+        .internal-text {
+            color: #0d6efd;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Vedant</a>
+
+            <ul class="navbar-nav ms-auto align-items-center">
+
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sections</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#projects">Projects</a></li>
+                        <li><a class="dropdown-item" href="#contact">Contact</a></li>
+                    </ul>
+                </li>
+
+                <!-- Dark mode slider -->
+                <li class="nav-item ms-3">
+                    <label class="switch">
+                        <input type="checkbox" onclick="toggleDark()">
+                        <span class="slider"></span>
+                    </label>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div id="hero" class="d-flex align-items-center justify-content-center">
+        <h1 style="color:white;"><span id="typing"></span></h1>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="section text-center">
+
+        <h2 class="external-highlight">About Me</h2>
+
+        <p>I’m a Computer Science student focused on Web Development & AI.</p>
+
+        <p class="internal-text">I love building clean interfaces.</p>
+
+        <h5>Skills</h5>
+        <ul class="list-inline">
+            <li class="list-inline-item">HTML</li>
+            <li class="list-inline-item">CSS</li>
+            <li class="list-inline-item">Bootstrap</li>
+            <li class="list-inline-item">C++</li>
+            <li class="list-inline-item">Python</li>
+            <li class="list-inline-item">SQL</li>
+        </ul>
+
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+
+        <h2 class="text-center">Projects</h2>
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="card project-card">
+                    <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Plant Nursery Management</h5>
+                        <p>DBMS based inventory system.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card project-card">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Skill Share Platform</h5>
+                        <p>Peer learning platform.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card project-card">
+                    <img src="https://images.unsplash.com/photo-1581092919534-5d2d86d6d4b7" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Nyaya Bot – AI for Law</h5>
+                        <p>AI legal assistant.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card project-card">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Bill Splitter App</h5>
+                        <p>Expense splitting web app.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+
+        <table class="table table-bordered text-center">
+            <tr>
+                <th>Year</th>
+                <th>Course</th>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>B.Tech CSE</td>
+            </tr>
+        </table>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+
+        <h2 class="text-center">Contact Me</h2>
+
+        <form class="w-50 mx-auto">
+
+            <input class="form-control mb-2" placeholder="Name">
+            <input class="form-control mb-2" placeholder="Email">
+
+            <select class="form-control mb-2">
+                <option>Web Development</option>
+                <option>AI</option>
+            </select>
+
+            <textarea class="form-control mb-2" placeholder="Message"></textarea>
+
+            <button class="btn btn-primary w-100">Send</button>
+
+        </form>
+
+    </section>
+
+    <footer class="text-center bg-dark text-white p-3">
+        © 2026 Vedant Portfolio
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Typing + Dark Mode -->
+    <script>
+        const text = "Hi, I'm Vedant";
+        let i = 0;
+
+        function typing() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, 100);
+            }
+        }
+        typing();
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+
+</body>
+
+</html>
