@@ -1,0 +1,19 @@
+### VS Code REST Client sample requests (install the "REST Client" extension)
+
+# List all books
+GET http://localhost:3000/api/books
+
+###
+# Get one book
+GET http://localhost:3000/api/books/1
+
+###
+# Create a new book
+POST http://localhost:3000/api/books
+Content-Type: application/json
+
+{
+  "title": "Designing Data-Intensive Applications",
+  "author": "Martin Kleppmann",
+  "year": 2017
+}
